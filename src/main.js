@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import dataV from "@jiaminghi/data-view";
+import "./main.css";
 
 Vue.config.productionTip = false;
 Vue.use(dataV);
