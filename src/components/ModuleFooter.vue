@@ -1,7 +1,7 @@
 <template>
   <div class="flex mt-2 flex-1">
     <div class="flex-[50%]">
-      <dv-border-box-8>
+      <dv-border-box-8 class="!h-[200px]">
         <div class="h-full flex flex-col p-4">
           <p>车间产线耗电统计</p>
           <div ref="cpChart" class="flex-1"></div>
@@ -9,7 +9,7 @@
       </dv-border-box-8>
     </div>
     <div class="flex-[25%]">
-      <dv-border-box-13>
+      <dv-border-box-13 class="!h-[200px]">
         <div class="h-full flex flex-col p-4">
           <p>动态环图</p>
           <dv-active-ring-chart :config="config6" class="flex-1" />
@@ -17,7 +17,7 @@
       </dv-border-box-13>
     </div>
     <div class="flex-[25%]">
-      <dv-border-box-8 :reverse="true">
+      <dv-border-box-8 :reverse="true" class="!h-[200px]">
         <div class="h-full flex flex-col p-4">
           <p>胶囊柱图</p>
           <dv-capsule-chart :config="config7" class="flex-1" />
@@ -54,7 +54,10 @@ export default {
             name: "新乡",
             value: 80
           }
-        ]
+        ],
+        digitalFlopStyle: {
+          fontSize: 12
+        }
       },
       config7: {
         data: [
@@ -103,7 +106,7 @@ export default {
           }
         },
         legend: {
-          data: ["Email", "Union Ads", "Video Ads", "Direct", "Search Engine"]
+          data: ["Email", "Union Ads", "Video Ads"]
         },
         toolbox: {
           feature: {
@@ -111,9 +114,9 @@ export default {
           }
         },
         grid: {
-          left: "3%",
-          right: "4%",
-          bottom: "3%",
+          left: "16",
+          right: "16",
+          bottom: "0",
           containLabel: true
         },
         xAxis: [
@@ -158,30 +161,6 @@ export default {
               focus: "series"
             },
             data: [150, 232, 201, 154, 190, 330, 410]
-          },
-          {
-            name: "Direct",
-            type: "line",
-            stack: "Total",
-            areaStyle: {},
-            emphasis: {
-              focus: "series"
-            },
-            data: [320, 332, 301, 334, 390, 330, 320]
-          },
-          {
-            name: "Search Engine",
-            type: "line",
-            stack: "Total",
-            label: {
-              show: true,
-              position: "top"
-            },
-            areaStyle: {},
-            emphasis: {
-              focus: "series"
-            },
-            data: [820, 932, 901, 934, 1290, 1330, 1320]
           }
         ]
       };

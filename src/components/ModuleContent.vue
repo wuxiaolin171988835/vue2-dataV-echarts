@@ -295,7 +295,13 @@ export default {
             data: [120, 200, 150, 80, 70, 110, 130],
             type: "bar"
           }
-        ]
+        ],
+        grid: {
+          top: 16,
+          bottom: 16,
+          left: 30,
+          right: 16
+        }
       };
       myChart.setOption(option);
     }
