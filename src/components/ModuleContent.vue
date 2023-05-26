@@ -2,7 +2,7 @@
  * @Author: wuxiaolin xiaolin.wu@eeoa.com
  * @Date: 2023-05-26 13:52:36
  * @LastEditors: wuxiaolin xiaolin.wu@eeoa.com
- * @LastEditTime: 2023-05-26 14:03:18
+ * @LastEditTime: 2023-05-26 15:25:58
  * @FilePath: /vue2-dataV-echarts/src/components/ModuleContent.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -288,26 +288,24 @@ export default {
   },
   methods: {
     initEcChart() {
-      setTimeout(() => {
-        const chartDom = this.$refs.ecChart;
-        const myChart = echarts.init(chartDom);
-        const option = {
-          xAxis: {
-            type: "category",
-            data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-          },
-          yAxis: {
-            type: "value"
-          },
-          series: [
-            {
-              data: [120, 200, 150, 80, 70, 110, 130],
-              type: "bar"
-            }
-          ]
-        };
-        myChart.setOption(option);
-      });
+      const chartDom = this.$refs.ecChart;
+      const myChart = echarts.init(chartDom);
+      const option = {
+        xAxis: {
+          type: "category",
+          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        },
+        yAxis: {
+          type: "value"
+        },
+        series: [
+          {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: "bar"
+          }
+        ]
+      };
+      myChart.setOption(option);
     }
   }
 };

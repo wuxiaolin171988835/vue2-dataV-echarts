@@ -2,7 +2,7 @@
  * @Author: wuxiaolin xiaolin.wu@eeoa.com
  * @Date: 2023-05-26 13:53:14
  * @LastEditors: wuxiaolin xiaolin.wu@eeoa.com
- * @LastEditTime: 2023-05-26 14:03:23
+ * @LastEditTime: 2023-05-26 15:25:53
  * @FilePath: /vue2-dataV-echarts/src/components/ModuleFooter.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -95,107 +95,105 @@ export default {
   },
   methods: {
     initCpChart() {
-      setTimeout(() => {
-        const chartDom = this.$refs.cpChart;
-        const myChart = echarts.init(chartDom);
-        const option = {
-          title: {
-            text: "Stacked Area Chart"
-          },
-          tooltip: {
-            trigger: "axis",
-            axisPointer: {
-              type: "cross",
-              label: {
-                backgroundColor: "#6a7985"
-              }
+      const chartDom = this.$refs.cpChart;
+      const myChart = echarts.init(chartDom);
+      const option = {
+        title: {
+          text: "Stacked Area Chart"
+        },
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "cross",
+            label: {
+              backgroundColor: "#6a7985"
             }
-          },
-          legend: {
-            data: ["Email", "Union Ads", "Video Ads", "Direct", "Search Engine"]
-          },
-          toolbox: {
-            feature: {
-              saveAsImage: {}
-            }
-          },
-          grid: {
-            left: "3%",
-            right: "4%",
-            bottom: "3%",
-            containLabel: true
-          },
-          xAxis: [
-            {
-              type: "category",
-              boundaryGap: false,
-              data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-            }
-          ],
-          yAxis: [
-            {
-              type: "value"
-            }
-          ],
-          series: [
-            {
-              name: "Email",
-              type: "line",
-              stack: "Total",
-              areaStyle: {},
-              emphasis: {
-                focus: "series"
-              },
-              data: [120, 132, 101, 134, 90, 230, 210]
+          }
+        },
+        legend: {
+          data: ["Email", "Union Ads", "Video Ads", "Direct", "Search Engine"]
+        },
+        toolbox: {
+          feature: {
+            saveAsImage: {}
+          }
+        },
+        grid: {
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: "category",
+            boundaryGap: false,
+            data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+          }
+        ],
+        yAxis: [
+          {
+            type: "value"
+          }
+        ],
+        series: [
+          {
+            name: "Email",
+            type: "line",
+            stack: "Total",
+            areaStyle: {},
+            emphasis: {
+              focus: "series"
             },
-            {
-              name: "Union Ads",
-              type: "line",
-              stack: "Total",
-              areaStyle: {},
-              emphasis: {
-                focus: "series"
-              },
-              data: [220, 182, 191, 234, 290, 330, 310]
+            data: [120, 132, 101, 134, 90, 230, 210]
+          },
+          {
+            name: "Union Ads",
+            type: "line",
+            stack: "Total",
+            areaStyle: {},
+            emphasis: {
+              focus: "series"
             },
-            {
-              name: "Video Ads",
-              type: "line",
-              stack: "Total",
-              areaStyle: {},
-              emphasis: {
-                focus: "series"
-              },
-              data: [150, 232, 201, 154, 190, 330, 410]
+            data: [220, 182, 191, 234, 290, 330, 310]
+          },
+          {
+            name: "Video Ads",
+            type: "line",
+            stack: "Total",
+            areaStyle: {},
+            emphasis: {
+              focus: "series"
             },
-            {
-              name: "Direct",
-              type: "line",
-              stack: "Total",
-              areaStyle: {},
-              emphasis: {
-                focus: "series"
-              },
-              data: [320, 332, 301, 334, 390, 330, 320]
+            data: [150, 232, 201, 154, 190, 330, 410]
+          },
+          {
+            name: "Direct",
+            type: "line",
+            stack: "Total",
+            areaStyle: {},
+            emphasis: {
+              focus: "series"
             },
-            {
-              name: "Search Engine",
-              type: "line",
-              stack: "Total",
-              label: {
-                show: true,
-                position: "top"
-              },
-              areaStyle: {},
-              emphasis: {
-                focus: "series"
-              },
-              data: [820, 932, 901, 934, 1290, 1330, 1320]
-            }
-          ]
-        };
-        myChart.setOption(option);
-      });
+            data: [320, 332, 301, 334, 390, 330, 320]
+          },
+          {
+            name: "Search Engine",
+            type: "line",
+            stack: "Total",
+            label: {
+              show: true,
+              position: "top"
+            },
+            areaStyle: {},
+            emphasis: {
+              focus: "series"
+            },
+            data: [820, 932, 901, 934, 1290, 1330, 1320]
+          }
+        ]
+      };
+      myChart.setOption(option);
     }
   }
 };
