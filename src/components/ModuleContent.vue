@@ -1,29 +1,21 @@
-<!--
- * @Author: wuxiaolin xiaolin.wu@eeoa.com
- * @Date: 2023-05-26 13:52:36
- * @LastEditors: wuxiaolin xiaolin.wu@eeoa.com
- * @LastEditTime: 2023-05-26 15:25:58
- * @FilePath: /vue2-dataV-echarts/src/components/ModuleContent.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 <template>
   <div class="flex mt-2 flex-1">
     <div class="flex-[25%]">
-      <dv-border-box-13 class="!h-[300px]">
+      <dv-border-box-13 class="!h-[200px]">
         <div class="h-full flex flex-col p-4">
           <p>设备能耗监测</p>
           <div ref="ecChart" class="flex-1"></div>
         </div>
       </dv-border-box-13>
 
-      <dv-border-box-1 class="!h-[300px]">
+      <dv-border-box-1 class="!h-[200px]">
         <div class="h-full flex flex-col p-4">
           <p>仓库库存量</p>
           <dv-capsule-chart :config="config1" class="flex-1" />
         </div>
       </dv-border-box-1>
 
-      <dv-border-box-2 class="!h-[300px]">
+      <dv-border-box-2 class="!h-[200px]">
         <div class="h-full flex flex-col p-4">
           <p>设备运转负载率</p>
           <dv-water-level-pond :config="config2" class="flex-1" />
@@ -31,7 +23,7 @@
       </dv-border-box-2>
     </div>
     <div class="flex-[50%]">
-      <dv-border-box-9 class="!h-[900px]">
+      <dv-border-box-9 class="!h-[600px]">
         <div class="h-full px-6 py-4 flex flex-col">
           <ul class="flex text-center">
             <li class="flex-1">
@@ -79,14 +71,14 @@
       </dv-border-box-9>
     </div>
     <div class="flex-[25%]">
-      <dv-border-box-1 class="!h-[400px]">
+      <dv-border-box-1 class="!h-[200px]">
         <div class="h-full flex flex-col p-4">
           <p>销售额时间轴</p>
           <dv-conical-column-chart :config="config4" class="flex-1 mt-4" />
         </div>
       </dv-border-box-1>
 
-      <dv-border-box-8 class="!h-[500px]">
+      <dv-border-box-8 class="!h-[400px]">
         <div class="h-full flex flex-col p-4">
           <p>车间设备能耗排行</p>
           <dv-scroll-ranking-board :config="config5" class="flex-1" />
