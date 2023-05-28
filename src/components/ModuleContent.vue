@@ -18,7 +18,11 @@
       <dv-border-box-2 class="!h-[200px]">
         <div class="h-full flex flex-col p-4">
           <p>设备运转负载率</p>
-          <dv-water-level-pond :config="config2" class="flex-1" />
+          <dv-water-level-pond
+            :config="config2"
+            class="flex-1 water-level-pond"
+            style="height: 140px"
+          />
         </div>
       </dv-border-box-2>
     </div>
