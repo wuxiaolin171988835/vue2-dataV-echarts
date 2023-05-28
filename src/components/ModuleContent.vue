@@ -272,16 +272,34 @@ export default {
             value: 29
           }
         ]
-      }
+      },
+      ecData: [100, 45, 199, 124, 89, 27, 18]
     };
   },
   mounted() {
     this.initEcChart();
+    this.initWebsocket();
   },
   methods: {
+    initWebsocket() {
+      const ws = new WebSocket("ws://127.0.0.1:8000");
+      ws.onopen = () => {
+        console.log("建立连接成功");
+        ws.send("success");
+      };
+      ws.onmessage = (res) => {
+        //获取服务器回传数据
+        this.ecData = JSON.parse(res.data);
+      };
+      ws.onerror = () => {
+        console.log("建立连接失败");
+      };
+    },
     initEcChart() {
-      const chartDom = this.$refs.ecChart;
-      const myChart = echarts.init(chartDom);
+      let myChart = echarts.getInstanceByDom(this.$refs.ecChart);
+      if (!myChart) {
+        myChart = echarts.init(this.$refs.ecChart);
+      }
       const option = {
         xAxis: {
           type: "category",
@@ -292,7 +310,7 @@ export default {
         },
         series: [
           {
-            data: [120, 200, 150, 80, 70, 110, 130],
+            data: this.ecData,
             type: "bar"
           }
         ],
@@ -304,6 +322,14 @@ export default {
         }
       };
       myChart.setOption(option);
+    }
+  },
+  watch: {
+    ecData: {
+      handler: function (newVal, oldVal) {
+        this.initEcChart();
+      },
+      deep: true
     }
   }
 };
